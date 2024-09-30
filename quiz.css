@@ -80,7 +80,8 @@ body.wrong {
     align-items: center; /* Centers controls vertically */
 }
 
+
+
 .hide {
     display: none; /* Hides elements with the hide class */
 }
-
