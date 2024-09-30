@@ -54,4 +54,13 @@ function showQuestion(question) {
     answerButtonsElement.appendChild(button)
     })
 }
+
+// Function to reset state between questions
+function resetState() {
+    clearStatusClass(document.body)
+    nextButton.classList.add('hide')
+    while (answerButtonsElement.firstChild) {
+      answerButtonsElement.removeChild(answerButtonsElement.firstChild)
+    }
+  }
   
