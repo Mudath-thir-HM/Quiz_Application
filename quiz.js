@@ -63,4 +63,29 @@ function resetState() {
       answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
   }
+
+// Function to handle answer selection
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerButtonsElement.children).forEach(button => {
+      setStatusClass(button, button.dataset.correct)
+    })
+// If correct answer, increase the score
+    if (correct) {
+        score++
+    }
+    
+
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove('hide')
+    } else {
+        saveScore() // Save score to localStorage when quiz ends
+        startButton.innerText = 'Restart'
+        startButton.classList.remove('hide')
+        viewScoreButton.classList.remove('hide') // Show the view score button
+    }
+    
+}
   
