@@ -107,4 +107,10 @@ function setStatusClass(element, correct) {
       element.classList.add('wrong')
     }
   }
+
+// Function to clear the correct/wrong class
+function clearStatusClass(element) {
+    element.classList.remove('correct')
+    element.classList.remove('wrong')
+  }
   
